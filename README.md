@@ -1,4 +1,5 @@
 # DiffIntFactorTriplet-cpp
+CURRENTLY NON-FUNCTIONAL!!!  
 A simple C++ program used to sets of three integer factors that are different and have a common product. This was ported from my original Python script.  
 
 # Usage

@@ -24,7 +24,7 @@ int main()
 
 	cout << "Starting query for target " + to_string(targetNo) + ", all three factors will be different...\n";
 
-	auto startTime = chrono::high_resolution_clock::now();
+	auto startTime = high_resolution_clock::now();
 
 	while (int3 <= targetNo) {
 		if (int1 * int2 * int3 == targetNo && int1 != int2 && int2 != int3 && int1 != int3) {
@@ -45,9 +45,9 @@ int main()
 		}
 	}
 
-	auto endTime = chrono::high_resolution_clock::now();
-	auto totalTime = endTime - startTime;
-	cout << "Time taken by program is : " + to_string(totalTime);
+	auto endTime = high_resolution_clock::now();
+	auto totalTime = duration_cast<nanoseconds>(endTime - startTime);
+	cout << "Elapsed time: approximately " + to_string(totalTime.count() / 1000000000.0) + " seconds\n";
 	cout << "*** FINISHED ***\n";
 	
 	return 0;

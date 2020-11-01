@@ -4,6 +4,7 @@
 // ported from DiffIntFactorTriplet.py , copyright (c) 2018 Félix An
 //
 // This script is used to find 3 DIFFERENT positive or negative factors for a given number.
+// It was originally written for me to quickly finish a grade 8 math problem.
 // This is a port of my original Python script, and runs much faster than it.
 
 #include <iostream>
@@ -14,6 +15,9 @@ using namespace std::chrono;
 
 int main()
 {
+	// Disable sync with stdio to speed it up
+	ios_base::sync_with_stdio(false);
+
 	int targetNo;
 	cout << "Target Number to find factor triplets? Must be a positive integer -> ";
 	cin >> targetNo;
@@ -26,6 +30,7 @@ int main()
 
 	auto startTime = high_resolution_clock::now();
 
+	// work through int1, int2 and int3 clock-style
 	while (int3 <= targetNo) {
 		if (int1 * int2 * int3 == targetNo && int1 != int2 && int2 != int3 && int1 != int3) {
 			cout << to_string(int1) + " * " + to_string(int2) + " * " + to_string(int3) + " = " + to_string(targetNo) + "\n";
